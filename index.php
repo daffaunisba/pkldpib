@@ -41,7 +41,7 @@ if ($lokasi_data) {
     <meta name="viewport" content="initial-scale=1.0, width=device-width">      
     <meta name="keywords" content="PKL DPIB, Pendaftaran" />      
     <meta name="description" content="Sistem Informasi Pendaftaran Praktik Kerja Lapangan (PKL) DPIB" />      
-    <title>Si Mantaps | PKL DPIB</title>      
+    <title>Si Mantap | PKL DPIB</title>      
     <link rel="icon" type="image/x-icon" href="img/logobangunan.png">      
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
