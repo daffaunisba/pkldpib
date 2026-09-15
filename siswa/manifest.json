@@ -1,0 +1,20 @@
+{
+    "name": "Portal Murid Si Mantap",
+    "short_name": "Si Mantap",
+    "start_url": "./login.php",
+    "display": "standalone",
+    "background_color": "#f8fafc",
+    "theme_color": "#667eea",
+    "icons": [
+        {
+            "src": "logobangunan.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "logobangunan.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

@@ -1,0 +1,1059 @@
+/* css/style.css */
+
+/* --- 1. BASE & GLOBAL STYLES --- */
+html {
+    scroll-behavior: smooth; 
+}
+body {
+    font-family: 'Poppins', sans-serif; 
+    background-color: #f0f2f5; 
+    padding: 0;
+    margin: 0;
+}
+
+/* --- Styling Global --- */
+/* ... */
+.container {
+    max-width: 1000px; 
+    margin: 0 auto; 
+    background: transparent; 
+    /* Padding ditingkatkan di sisi horizontal, dikurangi di vertikal */
+    padding: 35px 5%; /* PENTING: Tambahkan padding 5% di kiri dan kanan */
+    box-shadow: none; 
+}
+/* ... */
+
+h1 {
+    color: #2c3e50; 
+    font-weight: 700;
+    font-size: 28px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    padding-left: 5%; 
+    padding-right: 5%;
+}
+
+h2 {
+    color: #34495e;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-left: 5%;
+}
+
+/* --- Form Layout (Formulir Pendaftaran/Edit/Tambah) --- */
+form {
+    padding: 30px 40px; /* Padding di dalam form (misalnya 40px) */
+    background: #ffffff; 
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+    width: 100%; /* Dibuat 100% dari container */
+    max-width: none; /* Hapus max-width */
+    margin: 0; /* Hapus margin auto */
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #34495e;
+}
+
+form input[type="text"], 
+form input[type="email"],
+form input[type="number"],
+form input[type="password"],
+form select {
+    width: 100%;
+    padding: 10px 15px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    transition: border-color 0.2s;
+}
+form input:focus, form select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+form button {
+    background-color: #007bff; 
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* --- Alert Messages --- */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 500;
+    max-width: 90%; 
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.alert.success { color: #155724; background-color: #d4edda; border-color: #c3e6cb; }
+.alert.error { color: #721c24; background-color: #f8d7da; border-color: #f5c6cb; }
+.alert.warning { color: #856404; background-color: #fff3cd; border-color: #ffeeba; }
+
+
+/* --- Navigation & Links (Dashboard) --- */
+.admin-nav { 
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #e0e0e0;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.admin-nav a { font-weight: 600; color: #007bff; text-decoration: none; transition: color 0.2s; }
+.admin-nav a:hover { color: #0056b3; text-decoration: underline; }
+.link-admin { display: block; text-align: right; margin-top: 10px; font-size: 14px; }
+
+
+/* --- Table Styles (Peningkatan Visual Dashboard & Index) --- */
+table {
+    width: 100%; /* Dibuat 100% dari container */
+    margin: 20px 0; /* Margin 0 di kiri/kanan */
+    border-radius: 10px; 
+    overflow: hidden; 
+    box-shadow: none; 
+}
+
+table th, table td {
+    border: none; 
+    padding: 14px 18px; 
+    text-align: left;
+    font-size: 14px;
+    vertical-align: middle;
+    white-space: normal;
+}
+
+/* Penyesuaian Lebar Kolom (Gunakan class atau nth-child untuk penargetan) */
+table th:nth-child(1), table td:nth-child(1) { /* Lokasi PKL */
+    width: 20%; 
+}
+table th:nth-child(2), table td:nth-child(2) { /* Jam Kerja */
+    width: 25%; 
+}
+table th:nth-child(3), table td:nth-child(3) { /* Alamat */
+    width: 50%; /* Kolom alamat dibuat paling lebar */
+}
+table th:nth-child(4), table td:nth-child(4) { /* Kuota Max */
+    width: 10%; 
+}
+/* Sisanya (Terisi, Sisa Kuota, Status) akan berbagi lebar sisa */
+
+
+table th {
+    background-color: #2c3e50; 
+    color: #ffffff;
+    font-weight: 700; 
+    text-transform: uppercase;
+    letter-spacing: 0.8px; 
+}
+
+table tr:nth-child(even) { background-color: #f8f9fa; }
+table tr:hover { background-color: #e9ecef; }
+
+/* Status Kuota Styling */
+.status-penuh { color: white; background-color: #dc3545; padding: 6px 12px; border-radius: 50px; font-weight: 700; font-size: 13px; min-width: 80px; display: inline-block; text-align: center; }
+.status-tersedia { color: white; background-color: #28a745; padding: 6px 12px; border-radius: 50px; font-weight: 700; font-size: 13px; min-width: 80px; display: inline-block; text-align: center; }
+
+/* --- Styling Tombol Aksi (Ubah Data) --- */
+table td a.status-tersedia {
+    background-color: #007bff; 
+    color: white;
+    padding: 8px 15px; 
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+table td a.status-tersedia:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+/* --- Tambahan Styling untuk Search dan Lebar Tabel --- */
+
+/* --- Tambahan Styling untuk Search dan Lebar Tabel --- */
+.table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Hapus padding 0 5% di sini */
+    padding: 0; 
+    margin-bottom: 15px;
+}
+/* ... */
+.search-box input[type="text"] {
+    width: 300px;
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: box-shadow 0.2s;
+}
+.search-box input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+.table-info { padding-left: 0 !important; }
+
+
+/* ==================================== */
+/* --- HERO, NAVBAR, FOOTER, PAGINATION --- */
+/* ==================================== */
+
+/* --- 2. NAVBAR STYLES --- */
+.navbar {
+    background-color: #34495e; 
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.nav-brand a { color: white; font-size: 20px; font-weight: 700; text-decoration: none; }
+.navbar nav a { color: #ecf0f1; text-decoration: none; margin-left: 25px; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+.navbar nav a:hover { color: #007bff; }
+.btn-nav { background-color: #007bff; padding: 8px 15px; border-radius: 5px; margin-left: 15px !important; }
+.btn-nav-admin { background-color: transparent; border: 1px solid #ecf0f1; padding: 8px 15px; border-radius: 5px; margin-left: 10px !important; }
+
+
+/* css/style.css */
+
+/* --- 1. BASE & GLOBAL STYLES (TETAP) --- */
+/* ... (bagian ini tetap sama) ... */
+
+
+/* css/style.css */
+
+/* --- 1. BASE & GLOBAL STYLES --- */
+html {
+    scroll-behavior: smooth; 
+}
+body {
+    font-family: 'Poppins', sans-serif; 
+    background-color: #f0f2f5; 
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 1000px; 
+    margin: 0 auto; 
+    background: transparent; 
+    padding: 35px 0; 
+    box-shadow: none; 
+}
+
+h1 {
+    color: #2c3e50; 
+    font-weight: 700;
+    font-size: 28px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    padding-left: 5%; 
+    padding-right: 5%;
+}
+
+h2 {
+    color: #34495e;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-left: 5%;
+}
+
+/* --- Form Layout (Formulir Pendaftaran/Edit/Tambah) --- */
+form {
+    padding: 30px 40px; 
+    background: #ffffff; 
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    max-width: 90%; /* Disesuaikan untuk tampilan form */
+    margin: 0 auto;
+}
+/* ... (Sisa styling form, alerts, dan links tetap sama) ... */
+
+
+/* --- Table Styles --- */
+table {
+    width: 90%; 
+    margin: 20px auto; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+}
+/* ... (Sisa styling tabel dan pagination tetap sama) ... */
+
+
+/* ==================================== */
+/* === HERO SECTION (LURUS, BIRU TUA SOLID) === */
+/* ==================================== */
+
+.hero-section {
+    background-color: #34495e; 
+    background-image: none; /* Pastikan gambar background gedung dinonaktifkan */
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    position: relative;
+    
+    padding: 100px 5% 80px 5%; /* Padding untuk Hero Section */
+    
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    min-height: 450px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden; 
+    
+    /* PENTING: Menghapus semua efek gelombang/kurva */
+}
+
+/* Menghilangkan pseudo-element curve/gelombang */
+.hero-section::before, 
+.hero-section::after {
+    content: none;
+}
+
+
+.slide-item {
+    background-color: transparent; 
+    position: relative; 
+    width: 100%;
+    height: auto; 
+    padding: 0; 
+    align-items: center; 
+    justify-content: space-between; 
+    display: none; 
+    clip-path: none; 
+}
+
+.slide-item.active { display: flex; }
+
+/* Pastikan konten di atas */
+.hero-content, .hero-visual { z-index: 2; }
+
+.hero-content { 
+    max-width: 55%; 
+    color: white; 
+    padding-right: 20px; 
+}
+
+.hero-title-main { 
+    font-size: 38px; 
+    color: white; 
+    font-weight: 900;
+    margin-bottom: 5px;
+    padding-bottom: 0;
+    border-bottom: none;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.hero-subtitle { 
+    font-size: 20px; 
+    color: #ffd700; 
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.hero-content p { 
+    font-size: 15px;
+    color: #ecf0f1; 
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+.btn-primary-alt {
+    background-color: #ffa500; 
+    color: #2c3e50; 
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.btn-primary-alt:hover { background-color: #ff8c00; }
+
+/* VISUAL CONTAINER (PENTING: TATA LETAK 3 FOTO) */
+.hero-visual {
+    width: 40%;
+    height: 400px; 
+    position: relative;
+    z-index: 2;
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: flex-end; 
+    padding-bottom: 10px;
+    margin-bottom: -50px; /* Tarik ke bawah agar 'menempel' di garis lurus */
+}
+
+/* Styling setiap gambar siswa di dalam .hero-visual */
+.hero-visual img {
+    position: relative; 
+    width: 35%; /* Disesuaikan agar bisa tumpang tindih */
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5)); /* Shadow lebih kuat */
+    margin-left: -20px; /* Tumpukkan gambar agar saling overlap */
+}
+
+/* Penyesuaian Z-index agar tumpukan terlihat bagus */
+.hero-visual .slide-img.img-1 { z-index: 30; } /* Paling depan */
+.hero-visual .slide-img.img-2 { z-index: 20; } /* Tengah */
+.hero-visual .slide-img.img-3 { z-index: 10; } /* Paling belakang */
+
+/* ... (Sisa styling About Section, Footer, dan Login Page tetap sama) ... */
+
+/* === 4. ABOUT SECTION (Content LOSS) === */
+
+.about-section {
+    padding: 50px 0; 
+    background-color: transparent; /* TETAP TRANSPARAN */
+    text-align: left; 
+    margin-top: -100px; 
+    position: relative;
+    z-index: 1; 
+}
+
+.about-section h2 { 
+    font-size: 32px;
+    color: #34495e;
+    text-align: center; 
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.about-section h2::after { 
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #007bff;
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+.about-section .row { 
+    display: flex;
+    align-items: stretch; 
+    justify-content: center;
+    gap: 30px;
+    padding: 0 5%; 
+}
+
+.about-section .col-6 {
+    flex: 1;
+    padding: 30px; /* Padding di dalam kolom tetap ada untuk teks */
+    
+    /* PENTING: HILANGKAN BACKGROUND PUTIH DAN BORDER */
+    background-color: transparent; /* Transparan agar menyatu dengan body */
+    border: none; /* Hilangkan border */
+    
+    box-shadow: none; /* Pastikan tidak ada shadow */
+    border-radius: 0; /* Pastikan tidak ada radius */
+    
+    max-width: 45%;
+    transition: none;
+    transform: none;
+}
+
+/* Hilangkan efek hover jika ada (karena background sudah transparan) */
+.about-section .col-6:hover {
+    background-color: transparent; 
+}
+
+/* Styling Khusus Kolom Gambar */
+.about-section .col-6:last-child { 
+    /* PENTING: HILANGKAN BACKGROUND PUTIH DAN BORDER */
+    background-color: transparent; /* Transparan agar menyatu dengan body */
+    border: none; /* Hilangkan border */
+    
+    box-shadow: none; 
+    text-align: center;
+    padding: 0; /* Padding untuk gambar tetap 0 */
+    overflow: hidden; 
+    border-radius: 0; /* Pastikan tidak ada radius */
+}
+
+.about-section .col-6 img { 
+    max-width: 100%;
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
+    display: block;
+    object-fit: cover;
+    height: 100%; 
+}
+
+/* === 5. PAGINATION STYLING === */
+.pagination-nav {
+    text-align: center;
+    margin-top: 30px;
+    padding: 0; /* Hapus padding 0 5% */
+    font-size: 0; 
+}
+
+.pagination-nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #34495e; 
+    padding: 10px 16px; 
+    margin: 0 5px;
+    border: 2px solid #b8c0c8; 
+    border-radius: 30px; 
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    font-size: 15px; 
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pagination-nav a:hover:not(.active) {
+    background-color: #e9ecef; 
+    color: #007bff;
+    border-color: #007bff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+.pagination-nav a.active {
+    background-color: #007bff; 
+    color: white;
+    border-color: #007bff;
+    font-weight: 700;
+}
+
+.pagination-nav a.prev-next {
+    border: none;
+    background: transparent;
+    color: #34495e; 
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 0;
+}
+
+.pagination-nav a.prev-next:hover {
+    color: #007bff;
+    text-decoration: underline;
+    background: transparent;
+}
+
+
+/* --- 6. FOOTER STYLES --- */
+.main-footer {
+    background-color: #2c3e50; 
+    color: white;
+    padding: 40px 5% 10px 5%; 
+    font-size: 14px;
+}
+.footer-content { margin: 0 auto; padding-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #4a637c; }
+.footer-info, .footer-links { max-width: 300px; }
+.footer-info h4, .footer-links h4 { color: white; font-weight: 600; margin-bottom: 15px; border-bottom: none; padding-bottom: 0; }
+.footer-links a { display: block; color: #bdc3c7; text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+.footer-links a:hover { color: #007bff; }
+.footer-copy { text-align: center; padding: 15px 5%; color: #95a5a6; }
+
+
+/* --- 7. LOGIN STYLES --- */
+.login-page { background-color: #2c3e50; background-image: linear-gradient(135deg, #2c3e50 0%, #1a2533 100%); display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+.login-wrapper { display: flex; max-width: 900px; width: 90%; min-height: 500px; background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+.login-form-container { flex: 1; padding: 60px 40px; display: flex; flex-direction: column; justify-content: center; }
+.login-visual-container { flex: 1; background-color: #34495e; background-image: linear-gradient(135deg, #34495e 0%, #2c3e50 100%); display: flex; justify-content: center; align-items: center; color: white; }
+.login-form-container h1 { font-size: 32px; font-weight: bold; color: #2c3e50; margin-bottom: 5px; border-bottom: none; padding-bottom: 0; }
+.login-form-container p { color: #7f8c8d; margin-bottom: 30px; }
+.login-form-container button[type="submit"] { width: 100%; background-image: linear-gradient(135deg, #007bff 0%, #0056b3 100%); color: white; padding: 14px; border: none; border-radius: 8px; font-size: 18px; font-weight: 600; cursor: pointer; margin-top: 30px; transition: box-shadow 0.2s; }
+.login-form-container button[type="submit"]:hover { box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4); }
+
+/* Tambahkan ke css/style.css Anda */
+form button[name="add_new_guru"] {
+    background-color: #28a745; /* Warna hijau untuk tombol tambah */
+}
+form button[name="add_new_guru"]:hover {
+    background-color: #1e7e34;
+}
+
+/* --- Styling Lokasi Bimbingan (Balok Berwarna) --- */
+.lokasi-bimbingan-list {
+    list-style: none; /* Hilangkan bullet default */
+    padding: 0;
+    margin: -5px 0 0 0; /* Sesuaikan margin agar list terlihat rapi di dalam cell */
+    line-height: 1.2;
+}
+
+.lokasi-bimbingan-list li {
+    padding: 6px 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+/* Warna untuk balok ganjil (Biru Aksen) */
+.lokasi-bimbingan-list .lokasi-item-odd {
+    background-color: #e3f2fd; /* Biru sangat muda */
+    color: #0056b3; /* Biru teks yang kuat */
+}
+
+/* Warna untuk balok genap (Abu-abu Netral) */
+.lokasi-bimbingan-list .lokasi-item-even {
+    background-color: #f1f1f1; /* Abu-abu netral */
+    color: #2c3e50; /* Teks biru gelap */
+}
+
+.lokasi-bimbingan-list li:hover {
+    background-color: #d1e5f8; /* Highlight saat hover */
+}
+
+/* Mengatasi styling ol.lokasi-list lama jika masih ada */
+ol.lokasi-list {
+    list-style-type: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* --- Global Reset for Admin Layout --- */
+.admin-body {
+    display: flex; /* Mengaktifkan layout side-by-side */
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+}
+
+/* --- SIDEBAR STYLING --- */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50; /* Warna Sidebar Gelap */
+    color: white;
+    padding: 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0; /* Sidebar tidak menyusut */
+}
+
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #34495e;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffd700; /* Kuning Aksen */
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 12px 20px;
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 15px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar-nav a:hover, .sidebar-nav a.active {
+    background-color: #34495e;
+    color: #007bff;
+    border-left: 5px solid #007bff;
+    padding-left: 15px;
+}
+
+/* --- MAIN CONTENT & TOPBAR --- */
+.main-content-wrapper {
+    flex-grow: 1; /* Konten utama mengambil sisa ruang */
+    display: flex;
+    flex-direction: column;
+}
+
+.top-navbar {
+    background-color: white;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-message {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.top-navbar .logout-link {
+    color: #dc3545;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.admin-main-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+/* Mengubah .container lama untuk digunakan di dalam main content */
+.admin-main-content .container {
+    max-width: none; /* Biarkan mengisi ruang yang ada */
+    margin: 0;
+    padding: 25px; /* Padding kontainer di dalam konten utama */
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* --- ADMIN FOOTER --- */
+.admin-footer {
+    background-color: #ecf0f1;
+    padding: 15px;
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 13px;
+    margin-top: auto; /* Memastikan footer menempel di bawah */
+}
+
+/* Perluas H1 di Admin Content */
+.admin-main-content h1 {
+    font-size: 24px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 20px;
+}
+
+
+/* ======================================================= */
+/* DROPDOWN NAVIGATION STYLES (Untuk Tampilan Flyout) */
+/* ======================================================= */
+
+/* 1. Kontainer Dropdown */
+.dropdown {
+    position: relative; 
+    display: inline-block;
+    /* Memberi sedikit ruang, disamakan dengan a:hover */
+    padding: 0 5px; 
+}
+
+/* 2. Tombol/Tautan Utama Dropdown */
+.dropbtn {
+    /* Mencegah padding yang tumpang tindih dengan .dropdown */
+    margin: 0 !important; 
+    padding: 8px 15px !important;
+    font-weight: 600 !important;
+    display: block;
+}
+
+/* Hover pada tautan utama (dropbtn) */
+.dropbtn:hover {
+    background-color: #34495e !important;
+    border-radius: 5px;
+}
+
+/* 3. Konten Dropdown (Awalnya Tersembunyi) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 250px; 
+    z-index: 1001; 
+    
+    /* Menyesuaikan tampilan seperti gambar yang Anda berikan */
+    background-color: #1a5e2f; /* Hijau gelap */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    border-radius: 0 0 8px 8px; /* Sudut melengkung di bagian bawah */
+    padding: 5px 0;
+    margin-top: 5px; /* Sedikit jarak dari navbar */
+}
+
+/* 4. Styling Tautan di dalam Konten Dropdown */
+.dropdown-content a {
+    color: white; 
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block; 
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* 5. Efek Hover untuk Tautan di dalam Konten Dropdown */
+.dropdown-content a:hover {
+    background-color: #2c7746 !important; /* Hijau yang sedikit lebih terang saat hover */
+    color: #f1c40f !important; /* Warna teks kuning/emas saat hover */
+}
+
+/* 6. Aturan Inti: Tampilkan konten saat mouse diarahkan ke kontainer dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ======================================================= */
+/* NAV BAR UTAMA & JARAK (Disarankan ganti atau tambahkan) */
+/* ======================================================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%; 
+    background-color: #37475A; /* Biru Gelap - Sesuai Gambar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    /* Memberi ruang fleksibel di tengah */
+    flex-grow: 1; 
+    justify-content: center; /* Untuk memusatkan menu di antara brand dan tombol admin */
+}
+
+/* Tautan Menu Reguler (Beranda, Tentang PKL, Cek Kuota) */
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 10px;
+    /* INI PENGATURAN JARAK HORIZONTAL */
+    margin: 0 20px; 
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    background-color: transparent; /* Tetap transparan saat hover */
+    color: #f1c40f; /* Contoh: teks berubah warna saat hover */
+}
+
+/* Tombol Khusus (Daftar Sekarang, Admin Login) */
+.main-nav .btn-nav {
+    margin-left: 15px; /* Jarak khusus dari menu terakhir */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.main-nav .btn-nav.daftar {
+    background-color: #007bff; /* Biru - Sesuai Gambar */
+    color: white;
+    border: 1px solid #007bff;
+}
+
+.main-nav .btn-nav.admin {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+/* ======================================================= */
+/* NAV BAR UTAMA & JARAK (Diperbarui) */
+/* ======================================================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%; 
+    background-color: #37475A; /* Biru Gelap - Sesuai Gambar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    /* Memberi ruang fleksibel di tengah */
+    flex-grow: 1; 
+    justify-content: center; /* Untuk memusatkan menu di antara brand dan tombol admin */
+}
+
+/* Tautan Menu Reguler (Beranda, Tentang PKL, Cek Kuota) */
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 10px;
+    /* PENYESUAIAN JARAK HORIZONTAL DARI 20px MENJADI 10px (Lebih Rapat) */
+    margin: 0 10px; 
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    background-color: transparent; 
+    color: #f1c40f; 
+}
+
+/* Tombol Khusus (Daftar Sekarang, Admin Login) */
+.main-nav .btn-nav {
+    margin-left: 15px; /* Jarak khusus dari menu terakhir */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.main-nav .btn-nav.daftar {
+    background-color: #007bff; /* Biru - Sesuai Gambar */
+    color: white;
+    border: 1px solid #007bff;
+}
+
+.main-nav .btn-nav.admin {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+/* ======================================================= */
+/* NAV BAR UTAMA & JARAK (Paling Mepet) */
+/* ======================================================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%; 
+    background-color: #37475A; /* Biru Gelap Navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; 
+    justify-content: center; 
+}
+
+/* Tautan Menu Reguler (Beranda, Tentang PKL, Cek Kuota) */
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 10px;
+    /* PENYESUAIAN JARAK HORIZONTAL DARI 10px MENJADI 5px (Paling Rapat) */
+    margin: 0 5px; 
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    background-color: transparent; 
+    color: #f1c40f; /* Teks berubah warna saat hover (Kuning/Emas) */
+}
+
+/* Tombol Khusus (Daftar Sekarang, Admin Login) */
+.main-nav .btn-nav {
+    margin-left: 10px; /* Jarak khusus dari menu terakhir */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+/* ... (Gaya Tombol Daftar dan Admin tetap sama) ... */
+
+/* ======================================================= */
+/* DROPDOWN NAVIGATION STYLES (Warna dan Jarak Diperbarui) */
+/* ======================================================= */
+
+.dropdown {
+    position: relative; 
+    display: inline-block;
+    padding: 0 5px; 
+    /* PENYESUAIAN JARAK DROPDOWN DARI 10px MENJADI 5px (Paling Rapat) */
+    margin: 0 5px; 
+}
+
+.dropbtn {
+    margin: 0 !important; 
+    padding: 8px 10px !important;
+    font-weight: 600 !important;
+    display: block;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.dropbtn:hover {
+    color: #f1c40f !important;
+    background-color: transparent !important;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 200px; 
+    z-index: 1001; 
+    
+    /* PERUBAHAN WARNA: Dari Hijau ke Biru Gelap yang Senada dengan Navbar */
+    background-color: #2c3e50; /* Biru gelap sedikit berbeda dari navbar untuk kontras */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    border-radius: 0 0 4px 4px;
+    padding: 5px 0;
+    margin-top: 5px; 
+    left: 0; 
+}
+
+.dropdown-content a {
+    color: white; 
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block; 
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 !important;
+}
+
+.dropdown-content a:hover {
+    /* Warna hover pada dropdown */
+    background-color: #405167 !important; 
+    color: #f1c40f !important; 
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+

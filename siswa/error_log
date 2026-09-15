@@ -1,0 +1,51 @@
+[24-Aug-2026 09:31:10 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate column name 'link_drive' in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php:15
+Stack trace:
+#0 /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php(15): mysqli->query()
+#1 {main}
+  thrown in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php on line 15
+[24-Aug-2026 09:31:41 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate column name 'link_drive' in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php:15
+Stack trace:
+#0 /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php(15): mysqli->query()
+#1 {main}
+  thrown in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php on line 15
+[24-Aug-2026 09:31:48 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate column name 'link_drive' in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php:15
+Stack trace:
+#0 /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php(15): mysqli->query()
+#1 {main}
+  thrown in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php on line 15
+[24-Aug-2026 09:31:50 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate column name 'link_drive' in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php:15
+Stack trace:
+#0 /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php(15): mysqli->query()
+#1 {main}
+  thrown in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php on line 15
+[24-Aug-2026 09:31:51 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate column name 'link_drive' in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php:15
+Stack trace:
+#0 /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php(15): mysqli->query()
+#1 {main}
+  thrown in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php on line 15
+[24-Aug-2026 09:32:17 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate column name 'link_drive' in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php:15
+Stack trace:
+#0 /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php(15): mysqli->query()
+#1 {main}
+  thrown in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php on line 15
+[24-Aug-2026 09:32:20 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate column name 'link_drive' in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php:15
+Stack trace:
+#0 /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php(15): mysqli->query()
+#1 {main}
+  thrown in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/upload-laporan.php on line 15
+[03-Sep-2026 14:49:59 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: Invalid date in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/riwayat-presensi.php:138
+Stack trace:
+#0 /home/ingintau/pkl.dpibsmekisa.my.id/siswa/riwayat-presensi.php(138): cal_days_in_month()
+#1 {main}
+  thrown in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/riwayat-presensi.php on line 138
+[03-Sep-2026 14:50:18 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: Invalid date in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/riwayat-presensi.php:138
+Stack trace:
+#0 /home/ingintau/pkl.dpibsmekisa.my.id/siswa/riwayat-presensi.php(138): cal_days_in_month()
+#1 {main}
+  thrown in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/riwayat-presensi.php on line 138
+[08-Sep-2026 08:38:47 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/biodata.php on line 114
+[08-Sep-2026 08:38:47 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/biodata.php on line 115
+[08-Sep-2026 08:38:47 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/biodata.php on line 120
+[08-Sep-2026 08:38:54 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/biodata.php on line 114
+[08-Sep-2026 08:38:54 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/biodata.php on line 115
+[08-Sep-2026 08:38:54 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/ingintau/pkl.dpibsmekisa.my.id/siswa/biodata.php on line 120
